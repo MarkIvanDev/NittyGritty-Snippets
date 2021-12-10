@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>RelayCommand Generic</Title>
+			<Shortcut>ngrelaygeneric</Shortcut>
+			<Description>Create a NittyGritty RelayCommand with Parameter</Description>
+			<Author>Mark Ivan Basto</Author>
+			<HelpUrl>https://github.com/MarkIvanDev/NittyGritty-Snippets</HelpUrl>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Imports>
+				<Import>
+					<Namespace>NittyGritty.Commands</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>name</ID>
+					<ToolTip>Name of the RelayCommand.</ToolTip>
+					<Default>Run</Default>
+				</Literal>
+				<Literal Editable="true">
+					<ID>type</ID>
+					<ToolTip>Type of the RelayCommand's parameter.</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal Editable="true">
+					<ID>param</ID>
+					<ToolTip>Name of the RelayCommand's parameter.</ToolTip>
+					<Default>p</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp" Kind="method decl">
+				<![CDATA[
+        private RelayCommand<$type$> _$name$;
+        public RelayCommand<$type$> $name$Command => _$name$ ?? (_$name$ = new RelayCommand<$type$>(
+            ($param$) =>
+            {
+                $end$
+            }));
+        ]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>AsyncRelayCommand Generic</Title>
+			<Shortcut>ngasyncrelaygeneric</Shortcut>
+			<Description>Create a NittyGritty AsyncRelayCommand with Parameter</Description>
+			<Author>Mark Ivan Basto</Author>
+			<HelpUrl>https://github.com/MarkIvanDev/NittyGritty-Snippets</HelpUrl>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Imports>
+				<Import>
+					<Namespace>NittyGritty.Commands</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>name</ID>
+					<ToolTip>Name of the AsyncRelayCommand.</ToolTip>
+					<Default>Run</Default>
+				</Literal>
+				<Literal Editable="true">
+					<ID>type</ID>
+					<ToolTip>Type of the AsyncRelayCommand's parameter.</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal Editable="true">
+					<ID>param</ID>
+					<ToolTip>Name of the AsyncRelayCommand's parameter.</ToolTip>
+					<Default>p</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp" Kind="method decl">
+				<![CDATA[
+        private AsyncRelayCommand<$type$> _$name$;
+        public AsyncRelayCommand<$type$> $name$Command => _$name$ ?? (_$name$ = new AsyncRelayCommand<$type$>(
+            async ($param$) =>
+            {
+                $end$
+            }));
+        ]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

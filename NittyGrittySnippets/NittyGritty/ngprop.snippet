@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>NittyGritty Property</Title>
+			<Shortcut>ngprop</Shortcut>
+			<Description>Create a property to be used in NittyGritty ObservableObjects</Description>
+			<Author>Mark Ivan Basto</Author>
+			<HelpUrl>https://github.com/MarkIvanDev/NittyGritty-Snippets</HelpUrl>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<Default>int</Default>
+					<ToolTip>The type to construct</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<Default>_myProperty</Default>
+					<ToolTip>Backing field name</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<Default>MyProperty</Default>
+					<ToolTip>Property name</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp" Kind="method decl">
+				<![CDATA[
+                private $type$ $field$;
+                
+                public $type$ $property$
+                {
+                  get { return $field$; }
+                  set { Set(ref $field$, value); }
+                }
+                ]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
