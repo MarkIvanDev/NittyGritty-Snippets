@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>NittyGritty DialogService Configuration</Title>
+			<Shortcut>ngdialog</Shortcut>
+			<Description>Return a configured NittyGritty DialogService</Description>
+			<Author>Mark Ivan Basto</Author>
+			<HelpUrl>https://github.com/MarkIvanDev/NittyGritty-Snippets</HelpUrl>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>key</ID>
+					<Default>Key</Default>
+					<ToolTip>ViewModel key</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>view</ID>
+					<Default>View</Default>
+					<ToolTip>View Type</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp" Kind="method body">
+				<![CDATA[var dialogs = new DialogService();
+				dialogs.Configure($key$, typeof($view$));
+				$end$
+				return dialogs;]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
